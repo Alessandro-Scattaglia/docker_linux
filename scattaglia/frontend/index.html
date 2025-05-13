@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Frontend</title>
+</head>
+<body>
+  <h1>Frontend</h1>
+  <button id="btn">Verifica connessione</button>
+  <p id="status">—</p>
+
+  <script>
+    document.getElementById('btn').addEventListener('click', () => {
+      fetch('http://localhost:3000/status')
+        .then(res => res.json())
+        .then(data => {
+          document.getElementById('status').innerText = data.message;
+        })
+        .catch(err => {
+          document.getElementById('status').innerText = 'errore: ' + err;
+        });
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,17 @@
+# Node modules
+node_modules/
+
+# Log files
+*.log
+
+# OS specific files (es. Mac, Windows, Linux)
+.DS_Store
+Thumbs.db
+
+# Environment variables
+.env
+
+# Docker
+*.log
+*.pid
+docker-compose.override.yml
